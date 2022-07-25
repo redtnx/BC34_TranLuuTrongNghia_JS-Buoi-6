@@ -88,3 +88,71 @@ document.getElementById("submit3").onclick = function () {
   document.getElementById("show3").innerHTML =
     "<p>Số chẵn: " + soChan + "</p>" + "<p>Số lẻ: " + soLe + "</p>";
 };
+
+// Vòng lặp lồng
+function demoVongLapLong() {
+  var content = "";
+
+  for (var i = 0; i < 5; i++) {
+    for (var j = 0; j < 5; j++) {
+      content += "* ";
+    }
+    content += "\n";
+  }
+  console.log(content);
+}
+demoVongLapLong();
+
+/*
+  . i = 0; i < 5
+    . j = 0; j < 5 => * ; j = 1
+    . j = 1; j < 5 => * * ; j = 2
+    . j = 2; j < 5 => * * * ; j = 3
+    . j = 3; j < 5 => * * * * ; j = 4
+    . j = 4; j < 5 => * * * * *; j = 5
+    . j = 5; j < 5 => false => stop
+  . i = 1; i < 5
+    . j = 0; j < 5 => * ; j = 1
+    . j = 1; j < 5 => * * ; j = 2
+    . j = 2; j < 5 => * * * ; j = 3
+    . j = 3; j < 5 => * * * * ; j = 4
+    . j = 4; j < 5 => * * * * *; j = 5
+    . j = 5; j < 5 => false => stop
+  . i = 2; i < 5...
+*/
+
+// Break
+function demoBreak() {
+  for (i = 0; i < 10; i++) {
+    console.log(i);
+    if (i === 3) {
+      console.log("Tìm thấy số 3");
+      break;
+    }
+  }
+}
+demoBreak();
+
+// Continue
+function demoContinue() {
+  for (i = 0; i < 10; i++) {
+    if (i === 3) {
+      continue;
+    }
+    console.log(i);
+  }
+}
+demoContinue();
+
+// Return
+function demoReturn() {
+  // console.log("Hello World");
+  // return; // Kết thúc chương trình
+  // console.log("Hello Again");
+  if (2 === 2) {
+    console.log("Hello Cybersoft");
+    return;
+  }
+  console.log("Hơi bị nhức đầu");
+}
+demoReturn();
